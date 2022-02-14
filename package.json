@@ -1,0 +1,19 @@
+{
+  "name": "p3_02122022_b",
+  "version": "1.0.0",
+  "description": "project 3",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gmiranah/p3_02122022_B.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gmiranah/p3_02122022_B/issues"
+  },
+  "homepage": "https://github.com/gmiranah/p3_02122022_B#readme"
+}

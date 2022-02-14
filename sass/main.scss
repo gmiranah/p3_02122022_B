@@ -1,0 +1,381 @@
+@import url('http://fonts.cdnfonts.com/css/shrikhand');
+@import url('http://fonts.cdnfonts.com/css/roboto');
+@import "./utils/vaiables";
+
+              
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin:1% auto;
+  font-family: "roboto", sans-serif;
+  font-size: 12px;
+   
+}
+.loader-container{
+  position: fixed; 
+  top:0; left: 0; 
+  width: 100vw; height: 100vh;
+  z-index: 9;
+  overflow: hidden;
+  background-color: grey;
+  
+  animation-name: inAndOut;
+  animation-delay: 3s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  display: flex;
+  justify-content: center;
+ &__loader{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    border-top: 7px solid $primary-color;
+    border-bottom: 7px solid $secondary-color;
+    border-left:7px solid $tertiary-color ;
+    border-right: 7px solid $tertiary-color;
+       
+    border-radius: 50% 50%;
+    animation: spin 2s linear;
+   
+    
+}
+}
+
+@keyframes inAndOut{
+    0% {
+        opacity: 0;
+        transform: translateX(-9999px);
+    }
+    100%{
+        opacity: 0;
+       
+        transform: translateX(-9999px);
+    }
+}   
+
+ 
+@keyframes spin {
+  0% {
+       transform:  scale(1)  rotate(360deg);
+      
+  }
+  
+  50% {
+         transform: scale(0.5) rotate(-360deg);
+      }
+  
+  100%{
+      transform: scale(1)  rotate(360deg);
+    
+  }}       
+  
+ 
+.header{
+  display: flex;
+  justify-content: center;
+}
+#logo{
+  margin: 3px auto;
+  align-items: center;
+  
+  
+}
+.location{
+  
+  margin: 3px auto 0px auto;
+  background-color: #E9E9E9;
+  height: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  #maplogo{
+     margin-right: 10px;}
+  
+  &__specific-location{
+    align-items: center;
+    background-color: #E9E9E9;
+    font-family: "shrikhand";
+    margin: 1% auto;
+   
+  }
+}
+
+.restaurant-explore{
+  
+  margin: 1% auto;
+   background-color: #F6F6F6;
+   height: 250px;
+   display: flex;
+   flex-direction: column;
+    &__book-text{
+    margin: 2% auto;
+    
+    font-family: "shrikhand";}
+   
+    
+    &__parag-book-text{
+    margin: 3px auto 3px auto;
+    }
+   }
+      
+.container-explore-button{
+  margin: 0.1% auto 3% auto;
+  flex-basis: 15%;
+  width: 60%; 
+  &__explore-button{
+    width: 90%;
+    max-width: 90%;
+    padding: 5% 2%;
+    margin: 3% 5% 3% 7%;
+    border-radius: 25px 25px;
+    background: linear-gradient( $secondary-color, $primary-color);
+    background: -moz-linear-gradient($secondary-color, $primary-color);
+    box-shadow: 0 2px 8px 0 $primary-color;
+    transition: opacity 300ms;
+    border:none;
+    color: white;
+    }
+   &__explore-button:hover{
+      opacity: 0.75;
+      box-shadow: 0 4px 16px 0 $primary-color;
+        
+      }
+}
+
+.how-it-works{
+  display: flex;
+  flex-direction: column;
+  .how-it-works__steps{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 250px;
+    align-items: center;
+   }
+}
+
+.button-with-number{
+  flex-basis: 20%;
+  width: 85%;
+  max-width: 85%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  &__step-number{
+    background-color: $primary-color ;
+    color: white;
+    border-radius: 50% 50%;
+    padding: 5px 3px 5px 7px;
+  
+    width: 25px;
+    height: 25px;
+    align-items: center;
+    }
+    &__buttons-container{
+      width: 100%;
+      height: 100%;
+    }
+    &__button{
+      border-radius: 25px 25px;
+      border: 2px solid #F2F2F2;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      flex-basis: 99%;
+      min-width:99%;
+      height: 100%;
+      display: flex;
+      
+      align-items: center;
+      transition: opacity 300ms ease-in-out;
+      object-fit: fill;
+    }
+    &__button:hover{
+      background: linear-gradient(white, $secondary-color);
+      background: -moz-linear-gradient(white, $secondary-color);
+      box-shadow: 0 7px 11px 0 rgba(0,0,0,0.2);
+      opacity: 0.3;
+    }
+    &__bt-text{
+      font-weight: bold;
+      padding: 5% auto;
+     
+          }
+          &__icon{
+            margin-right: 25px;
+            
+            }
+            &__icon:hover{
+              color: $primary-color;
+            }
+ }
+ .restaurants-pics{
+  display: flex;
+  flex-direction: column;
+  height:1500px;
+  flex-wrap: nowrap;
+  width: auto;
+  justify-content:space-between;
+}
+
+.restaurant-card{
+  border-radius: 15px 15px 0px 0px;
+  flex-basis: 20%;
+  max-height: 20%;   
+  border: 2px solid #F2F2F2;
+  position: relative;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  background-color: white;
+  margin: 1% auto;
+  width: 90%;
+  max-width: 90%;
+  &__image{
+    border-radius:15px 15px 0px 0px;
+    
+    width: 100%;
+    max-width:100%;
+    height: 70%;
+    max-height: 70%;
+    object-fit: cover;
+    
+  }
+  &__image-information{
+    object-fit: contain;
+    
+    margin-top: 0px;
+    margin-left: 5%;
+    margin-bottom: 20%;
+    padding: 3px 3px;
+    text-decoration: none;}
+  
+  .New{
+    background: #99E2D0;
+    
+    object-fit: contain;
+    position: absolute;
+    top: 10%;
+    left: 80%;
+    width: 40px;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .heart-icon{
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0px 0px;
+    border-radius:20px 20px 100px 100px;
+    
+    }
+  .heart-container{
+    position: relative;
+    
+    height:25px;
+    width: 25px;
+    margin-left: 70%;
+    margin-bottom: 20%;
+  } 
+  .heart-filled{
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #FF79DA;
+    opacity: 0;
+  }
+  .heart-filled:hover{
+    animation-name: fill-red;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    
+    animation-fill-mode: forwards;
+  }
+  }
+
+@keyframes fill-red{
+  0%{
+      opacity: 0.1;
+  }
+  25%{
+      opacity: 0.3
+  }
+  50%{
+      opacity: 0.5;
+  }
+  75%{
+      opacity: 0.75
+  }
+  100%{
+      opacity: 1;
+  }
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height:200px;
+  margin-top: 40px;
+  margin-bottom: 3px;
+  background-color: black;
+
+  &__list{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  flex-basis: 60%;
+  background-color: black;
+  color: white;
+  list-style: none;
+  width: 100%;}
+
+   &__list-title{
+  font-family: "shrikhand";
+  color: white;
+  text-decoration: none;
+   background-color: black;
+  margin-left: 10%;
+  margin-top: 5%;
+  font-size: 16px;
+ 
+  }
+   &--list-item{
+  text-decoration: none;
+  color: white;
+  }
+  &--icon-food{
+  padding-right: 10px;
+ }
+  &--icon-hands{
+  padding-right: 10px;
+ } 
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+   
