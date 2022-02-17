@@ -1,6 +1,8 @@
 @import url('http://fonts.cdnfonts.com/css/shrikhand');
 @import url('http://fonts.cdnfonts.com/css/roboto');
 @import "./utils/vaiables";
+@import "./pages/loader-home";
+@import "./utils/mixins";
 
               
 *{
@@ -13,80 +15,7 @@ body{
   font-size: 12px;
    
 }
-.loader-container{
-  position: fixed; 
-  top:0; left: 0; 
-  width: 100vw; height: 100vh;
-  z-index: 9;
-  overflow: hidden;
-  background-color: grey;
-  
-  animation-name: inAndOut;
-  animation-delay: 3s;
-  animation-duration: 1s;
-  animation-fill-mode: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-  display: flex;
-  justify-content: center;
- &__loader{
-    height: 50px;
-    width: 50px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    
-    border-top: 7px solid $primary-color;
-    border-bottom: 7px solid $secondary-color;
-    border-left:7px solid $tertiary-color ;
-    border-right: 7px solid $tertiary-color;
-       
-    border-radius: 50% 50%;
-    animation: spin 2s linear;
-   
-    
-}
-}
 
-@keyframes inAndOut{
-    0% {
-        opacity: 0;
-        transform: translateX(-9999px);
-    }
-    100%{
-        opacity: 0;
-       
-        transform: translateX(-9999px);
-    }
-}   
-
- 
-@keyframes spin {
-  0% {
-       transform:  scale(1)  rotate(360deg);
-      
-  }
-  
-  50% {
-         transform: scale(0.5) rotate(-360deg);
-      }
-  
-  100%{
-      transform: scale(1)  rotate(360deg);
-    
-  }}       
-  
- 
-.header{
-  display: flex;
-  justify-content: center;
-}
-#logo{
-  margin: 3px auto;
-  align-items: center;
-  
-  
-}
 .location{
   
   margin: 3px auto 0px auto;
@@ -256,7 +185,7 @@ body{
     text-decoration: none;}
   
   .New{
-    background: #99E2D0;
+    background: $tertiary-color;
     
     object-fit: contain;
     position: absolute;
@@ -290,7 +219,7 @@ body{
     position: absolute;
     top: 0;
     left: 0;
-    color: #FF79DA;
+    color: $secondary-color;
     opacity: 0;
   }
   .heart-filled:hover{
@@ -360,7 +289,313 @@ body{
   padding-right: 10px;
  } 
   }
+ /*-----------------------------------------------------------------------MENU-----------------------------------*/
+   
+  .menu-header{
+    display: flex;
 
+    &__button-container{
+    
+      width: 100%;
+    }
+    &__button{
+      width: 99%;
+      border: none;
+      background-color: white;
+      
+    }
+    &__arrow{
+      color: black;
+    }
+    &__logo{
+      font-family: "shrikhand";
+      font-size: 30px;
+      
+      padding-right: 20%;
+      padding-left: 20%;
+    }
+  }
+  
+  
+  .menu-outer-container{
+    height:2400px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    background-color: #F6F6F6;
+    justify-content: flex-start;
+  }
+
+  .menu-card{
+   flex-basis: 18%;
+   max-height: 18%;
+   position: relative;
+   width: 100%;
+
+   &__image{
+   width: 100%;
+   height: 60%;
+    object-fit: cover;     
+      }
+
+    &__image-information{
+    height: 20%;
+    max-height: 20%;
+    margin-top: 0%;
+    font-size: 22px;
+    font-family: "shrikhand";
+    border-radius: 30px 30px 0 0 ;
+    padding: 20px 10px;
+    background-color: #F6F6F6;
+    margin-top: -5%;
+    position: absolute;
+    width: 100%;
+    }
+  }
+      
+  .menu-heart-icon{
+    position: absolute;
+    left: 80%;
+    top:30%;
+    font-size: 22px;
+  }
+
+  .menu-heart-filled{
+  position: absolute;
+  left: 80%;
+  top: 30%; 
+  opacity: 0;
+  color: $secondary-color;
+  font-size: 22px;
+  }
+
+  @keyframes fill-red-menu{
+  0%{
+      opacity: 0.1;
+  }
+  25%{
+      opacity: 0.3
+  }
+  50%{
+      opacity: 0.5;
+  }
+  75%{
+      opacity: 0.75
+  }
+  100%{
+      opacity: 1;
+  }
+  }
+  .menu-heart-filled:hover{
+  animation-name: fill-red;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
+  }
+  .menu-courses{
+    flex-basis: 83%;
+    
+    min-height: 83%;
+    background-color: #F6F6F6;
+    display: flex;
+    flex-direction: column;
+    &--course-link{
+    text-decoration: none;
+    color: black;
+    }
+    &__course-title{
+    margin-top: 20%;
+    border-bottom:  2px solid $tertiary-color;
+    width: 9%;
+    padding-bottom: 1%;
+    padding-right: 20px;
+    font-size: 14px;
+    margin-left: 1%;
+    text-transform: uppercase;
+  }
+    
+  }
+  
+  .entrees{
+   @include course-design;
+  }
+  .main-dish{
+   @include course-design;
+  }
+  .desserts{
+   @include course-design;
+  }
+  .entrees__item{
+  @include item-design;
+  animation-name: appearing-menu;
+  animation-delay: 2s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  /* animation-iteration-count: infinite; */
+  animation-timing-function: ease-in-out;
+  }
+  
+  .main-dish__item{
+  @include item-design;
+  animation-name: appearing-menu;
+  animation-delay: 6s;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;  
+  }
+  .desserts__item{
+  @include item-design;
+  animation-name: appearing-menu;
+  animation-delay: 9s;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  }   
+      
+  .item-information{
+    
+  flex-basis: 70%;
+  height: 100%;
+  margin-left: 13%;
+  transition-property: transform;
+  transition-delay: 1s;
+  transition-duration: 1s;
+  position: relative;
+
+  &--name{
+   padding-left: 2%;
+   font-weight: bold;
+   font-size: 14px;
+      }
+
+  &--price{
+    position: absolute;
+    left: 95%;
+    width: 50px;
+      }
+  }
+
+  @keyframes appearing-menu{
+  0% {
+      opacity: 1;
+      transform: translateY(0px);
+      
+  }
+  50%{
+      opacity: 1;
+      transform: translateY(10px);
+  }
+  
+  100%{
+      opacity: 1;
+      transform: translateY(0px);
+      box-shadow: 8px 8px 12px 8px rgba(51, 48, 48, 0.2);
+    
+      
+  }}
+ 
+  .menu-bar{
+    background-color: $tertiary-color;
+    flex-basis: 20%;
+    max-width: 20%;
+    border-radius: 0 30px 30px 0;
+    border: 2px solid $tertiary-color;
+    height: 100%;
+    min-height: 100%;
+    position: absolute;
+    left: 100%;
+    top: 0%;
+    overflow: hidden;
+    opacity: 0;
+    padding: 20px 50px;
+    transition-property: all;
+    transition-duration: 1s;
+     transition-timing-function: ease-in-out;
+    
+     
+  }
+   
+  .check{
+   color: white;
+   font-size: 20px; 
+   padding-bottom: 10px;
+   transition-property: transform;
+    transition-duration: 1s;
+    transition-timing-function: linear;
+    
+  }
+     
+  .entrees__item:hover .menu-bar{
+    transform: translate(-100%);
+    -moz-transform: translate(-100%);
+    opacity: 1;
+  }
+  .entrees__item:hover .check{
+    transform: rotate(360deg);
+    display: inline-block;
+  }
+  .entrees__item:hover .item-information{
+    
+    transform: translateX(-18%);
+    
+  }
+  
+  .main-dish__item:hover .menu-bar{
+  transform: translate(-100%);
+  -moz-transform: translate(-100%);
+  opacity: 1;
+  }
+  .main-dish__item:hover .check{
+  transform: rotate(360deg);
+  display: inline-block;
+  }
+  .main-dish__item:hover .item-information{
+  
+  transform: translateX(-18%);
+  
+  }
+  .desserts__item:hover .menu-bar{
+  transform: translate(-100%);
+  -moz-transform: translate(-100%);
+  opacity: 1;
+  }
+  .desserts__item:hover .check{
+  transform: rotate(360deg);
+  display: inline-block;
+  }
+  .desserts__item:hover .item-information{
+  
+  transform: translateX(-18%);
+  
+  }
+  
+  .menu-order-button{
+  width: 70%;
+  max-width: 70%;
+  padding: 5% 2%;
+  margin: 3% 5% 3% 7%;
+  border-radius: 25px 25px;
+  background: linear-gradient( $secondary-color, $primary-color);
+  background: -moz-linear-gradient($secondary-color, $primary-color);
+  box-shadow: 0 2px 8px 0 $primary-color;
+  transition: opacity 300ms;
+  border:none;
+  color: white;
+  
+  }
+  .container-menu-order-button{
+  margin: 3% auto;
+  width: 70%;
+  
+  }
+  
+  .menu-order-button:hover{
+    opacity: 0.75;
+    box-shadow: 0 4px 16px 0 $primary-color;
+      
+  }
+/*-------------------------------------------------------------------------------Media query--------------*/
   @media screen and (min-width: 768px) and (max-width: 991px){
  
     .container-explore-button{
@@ -395,9 +630,7 @@ body{
          
     }
     
-    
-   
-    .restaurants-pics{
+      .restaurants-pics{
         display: flex;
         flex-direction: row;
         height:750px;
@@ -423,12 +656,46 @@ body{
     }
     .footer__list{
         align-items: center;
-    }}
+    }
 
-   
-    
-   
+    .menu-outer-container{
         
+      height: 3000px;
+    }
+    
+    .menu-card{
+      flex-basis: 18%;
+      max-height: 18%;
+       position: relative;
+       width: 100%;
+    
+   } 
+   .menu-card__image{
+     height: 80%;
+     
+   }  
+   .entrees__item{
+    width: 60%;
+    margin: 2% auto;
+    
+  }
+  .main-dish__item{
+    width: 60%;
+    margin: 2% auto;
+  }
+  .desserts__item{
+    width: 60%;
+    margin: 2% auto
+  }
+  
+  .container-menu-order-button{
+    margin: 10% auto 0% auto;
+    flex-basis: 15%;
+    width: 40%;
+    
+}
+  }
+       
     @media screen and (min-width: 992px) and (max-width: 3000px){
         .container-explore-button{
             flex-basis: 15%;
@@ -438,7 +705,6 @@ body{
           }   
             
         }
-    
           
       .how-it-works{
         display: flex;
@@ -488,11 +754,63 @@ body{
     .footer__list{
         align-items: center;
     }
+
+    .menu-outer-container{
+      
+      
+      height: 3000px;
+    }
+
+    .menu-card{
+      flex-basis: 18%;
+      max-height: 18%;
+       position: relative;
+       width: 100%;
+     
+       
+   } 
+   .menu-card__image{
+     height: 90%;
+   }  
+   .entrees__item{
+    width: 40%;
+    margin: 2% auto;
+    
+  }
+  .main-dish__item{
+    width: 40%;
+    margin: 2% auto;
+  }
+  .desserts__item{
+    width: 40%;
+    margin: 2% auto
+  }
+   
+   
+  
+  .container-menu-order-button{
+    margin: 4% auto 0% auto;
+    flex-basis: 15%;
+    width: 40%;
+    
+}
+.menu-heart-icon{
+  position: absolute;
+  left: 70%;
+  top: 30%;
+  font-size: 22px;
+}
+.menu-heart-filled{
+position: absolute;
+left: 70%;
+top: 30%; 
+opacity: 0;
+color: #FF79DA;
+font-size: 22px;
+}
   }
 
-    
-
-
+   
 
 
 

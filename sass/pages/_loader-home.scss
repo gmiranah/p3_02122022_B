@@ -1,0 +1,74 @@
+.loader-container{
+    position: fixed; 
+    top:0; left: 0; 
+    width: 100vw; height: 100vh;
+    z-index: 9;
+    overflow: hidden;
+    background-color: grey;
+    
+    animation-name: inAndOut;
+    animation-delay: 3s;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    display: flex;
+    justify-content: center;
+   &__loader{
+      height: 50px;
+      width: 50px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      
+      border-top: 7px solid $primary-color;
+      border-bottom: 7px solid $secondary-color;
+      border-left:7px solid $tertiary-color ;
+      border-right: 7px solid $tertiary-color;
+         
+      border-radius: 50% 50%;
+      animation: spin 2s linear;
+     
+      
+  }
+  }
+  
+  @keyframes inAndOut{
+      0% {
+          opacity: 0;
+          transform: translateX(-9999px);
+      }
+      100%{
+          opacity: 0;
+         
+          transform: translateX(-9999px);
+      }
+  }   
+  
+   
+  @keyframes spin {
+    0% {
+         transform:  scale(1)  rotate(360deg);
+        
+    }
+    
+    50% {
+           transform: scale(0.5) rotate(-360deg);
+        }
+    
+    100%{
+        transform: scale(1)  rotate(360deg);
+      
+    }}       
+    
+   
+  .header{
+    display: flex;
+    justify-content: center;
+  }
+  #logo{
+    margin: 3px auto;
+    align-items: center;
+    
+    
+  }
