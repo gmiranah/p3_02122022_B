@@ -471,6 +471,7 @@ body {
   margin: 4% 1%;
   display: flex;
   justify-content: flex-start;
+  overflow-x: hidden;
   opacity: 0;
   animation-name: appearing-menu;
   animation-delay: 2s;
@@ -489,6 +490,7 @@ body {
   margin: 4% 1%;
   display: flex;
   justify-content: flex-start;
+  overflow-x: hidden;
   opacity: 0;
   animation-name: appearing-menu;
   animation-delay: 6s;
@@ -506,6 +508,7 @@ body {
   margin: 4% 1%;
   display: flex;
   justify-content: flex-start;
+  overflow-x: hidden;
   opacity: 0;
   animation-name: appearing-menu;
   animation-delay: 9s;
@@ -811,23 +814,45 @@ body {
 
   .entrees__item {
     width: 40%;
-    margin: 2% auto;
+    margin: 0.5% auto;
+    flex-basis: 15%;
+    max-height: 15%;
   }
 
   .main-dish__item {
     width: 40%;
-    margin: 2% auto;
+    margin: 0.5% auto;
+    flex-basis: 15%;
+    max-height: 15%;
   }
 
   .desserts__item {
     width: 40%;
-    margin: 2% auto;
+    margin: 0.5% auto;
+    flex-basis: 15%;
+    max-height: 15%;
   }
 
   .container-menu-order-button {
-    margin: 4% auto 0% auto;
-    flex-basis: 15%;
+    margin: 7% auto 0% auto;
+    flex-basis: 3%;
+    max-height: 3%;
     width: 40%;
+  }
+
+  .entrees {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-dish {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .desserts {
+    display: flex;
+    flex-direction: column;
   }
 
   .menu-heart-icon {
