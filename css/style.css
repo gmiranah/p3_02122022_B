@@ -840,21 +840,6 @@ body {
     width: 40%;
   }
 
-  .entrees {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .main-dish {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .desserts {
-    display: flex;
-    flex-direction: column;
-  }
-
   .menu-heart-icon {
     position: absolute;
     left: 70%;
