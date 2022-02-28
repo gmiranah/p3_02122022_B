@@ -631,6 +631,7 @@ body {
   padding: 5% 2%;
   margin: 3% 5% 3% 7%;
   border-radius: 25px 25px;
+  border-radius: 25px 25px;
   background: linear-gradient(#FF79DA, #9356DC);
   background: -moz-linear-gradient(#FF79DA, #9356DC);
   box-shadow: 0 2px 8px 0 #9356DC;

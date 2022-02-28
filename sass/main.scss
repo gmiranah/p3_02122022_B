@@ -64,13 +64,7 @@ body{
     max-width: 90%;
     padding: 5% 2%;
     margin: 3% 5% 3% 7%;
-    border-radius: 25px 25px;
-    background: linear-gradient( $secondary-color, $primary-color);
-    background: -moz-linear-gradient($secondary-color, $primary-color);
-    box-shadow: 0 2px 8px 0 $primary-color;
-    transition: opacity 300ms;
-    border:none;
-    color: white;
+    @include pinkButton;
     }
    &__explore-button:hover{
       opacity: 0.75;
@@ -577,12 +571,7 @@ body{
   padding: 5% 2%;
   margin: 3% 5% 3% 7%;
   border-radius: 25px 25px;
-  background: linear-gradient( $secondary-color, $primary-color);
-  background: -moz-linear-gradient($secondary-color, $primary-color);
-  box-shadow: 0 2px 8px 0 $primary-color;
-  transition: opacity 300ms;
-  border:none;
-  color: white;
+  @include pinkButton;
   
   }
   .container-menu-order-button{

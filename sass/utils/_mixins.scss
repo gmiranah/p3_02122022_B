@@ -1,3 +1,12 @@
+@mixin pinkButton {
+    border-radius: 25px 25px;
+    background: linear-gradient( $secondary-color, $primary-color);
+    background: -moz-linear-gradient($secondary-color, $primary-color);
+    box-shadow: 0 2px 8px 0 $primary-color;
+    transition: opacity 300ms;
+    border:none;
+    color: white;
+}
 
 @mixin course-design{
     flex-basis: 30%;
