@@ -566,7 +566,7 @@ body {
   top: 0%;
   overflow: hidden;
   opacity: 0;
-  padding: 20px 50px;
+  padding: 20px 40px;
   transition-property: all;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
