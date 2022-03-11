@@ -183,7 +183,6 @@ body {
 }
 .button-with-number__bt-text {
   font-weight: bold;
-  padding: 5% auto;
 }
 .button-with-number__icon {
   margin-right: 25px;
@@ -337,9 +336,11 @@ body {
   width: 99%;
   border: none;
   background-color: white;
+  display: flex;
 }
 .menu-header__arrow {
   color: black;
+  align-self: center;
 }
 .menu-header__logo {
   font-family: "shrikhand";
@@ -566,7 +567,7 @@ body {
   top: 0%;
   overflow: hidden;
   opacity: 0;
-  padding: 20px 40px;
+  padding: 20px 35px;
   transition-property: all;
   transition-duration: 1s;
   transition-timing-function: ease-in-out;
@@ -707,6 +708,17 @@ body {
     align-items: center;
   }
 
+  .menu-header__logo {
+    margin-right: 40%;
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+
+  .menu-header__arrow {
+    padding-left: 100px;
+    padding-right: 30px;
+  }
+
   .menu-outer-container {
     height: 3000px;
   }
@@ -735,6 +747,10 @@ body {
   .desserts__item {
     width: 60%;
     margin: 2% auto;
+  }
+
+  .menu-bar {
+    padding: 20px 50px;
   }
 
   .container-menu-order-button {
@@ -799,6 +815,17 @@ body {
     align-items: center;
   }
 
+  .menu-header__logo {
+    margin-right: 40%;
+    padding-right: 20%;
+    padding-left: 20%;
+  }
+
+  .menu-header__arrow {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+
   .menu-outer-container {
     height: 3000px;
   }
@@ -833,6 +860,10 @@ body {
     margin: 0.5% auto;
     flex-basis: 15%;
     max-height: 15%;
+  }
+
+  .menu-bar {
+    padding: 20px 50px;
   }
 
   .container-menu-order-button {

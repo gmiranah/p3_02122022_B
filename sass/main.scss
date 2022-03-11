@@ -127,7 +127,7 @@ body{
     }
     &__bt-text{
       font-weight: bold;
-      padding: 5% auto;
+     
      
     }
           
@@ -297,10 +297,12 @@ body{
       width: 99%;
       border: none;
       background-color: white;
+      display: flex;
       
     }
     &__arrow{
       color: black;
+      align-self: center;
     }
     &__logo{
       font-family: "shrikhand";
@@ -503,7 +505,7 @@ body{
     top: 0%;
     overflow: hidden;
     opacity: 0;
-    padding: 20px 40px;
+    padding: 20px 35px;
     transition-property: all;
     transition-duration: 1s;
      transition-timing-function: ease-in-out;
@@ -647,6 +649,15 @@ body{
     .footer__list{
         align-items: center;
     }
+    .menu-header__logo{
+      margin-right: 40%;
+      padding-right: 20%;
+      padding-left: 20%;
+    }
+    .menu-header__arrow{
+      padding-left: 100px;
+      padding-right: 30px;
+    }
 
     .menu-outer-container{
         
@@ -676,6 +687,9 @@ body{
   .desserts__item{
     width: 60%;
     margin: 2% auto
+  }
+  .menu-bar{
+    padding: 20px 50px;
   }
   
   .container-menu-order-button{
@@ -744,7 +758,15 @@ body{
     .footer__list{
         align-items: center;
     }
-
+    .menu-header__logo{
+      margin-right: 40%;
+      padding-right: 20%;
+      padding-left: 20%;
+    }
+    .menu-header__arrow{
+      padding-left: 100px;
+      padding-right: 100px;
+    }
     .menu-outer-container{
       
       
@@ -782,6 +804,9 @@ body{
     flex-basis: 15%;
     max-height: 15%;
     
+  }
+  .menu-bar{
+    padding: 20px 50px;
   }
    
    
